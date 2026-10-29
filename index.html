@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ashanar Elance | Micro-SaaS Acquisitions</title>
+    <title>Arabbika | Micro-SaaS Acquisitions</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -30,9 +30,22 @@
         }
         /* Hero Section */
         header {
-            padding: 100px 0 60px;
+            padding: 80px 0 60px;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
+        
+        /* The Logo */
+        .brand-logo {
+            max-width: 320px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 30px;
+            border-radius: 12px;
+        }
+
         .badge {
             background: rgba(0, 229, 255, 0.1);
             color: var(--accent);
@@ -46,7 +59,7 @@
             border: 1px solid rgba(0, 229, 255, 0.2);
         }
         h1 {
-            font-size: clamp(40px, 8vw, 64px);
+            font-size: clamp(36px, 6vw, 56px);
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 24px;
@@ -155,6 +168,9 @@
 
     <div class="container">
         <header>
+            <!-- The Logo Image -->
+            <img src="logo.png" alt="Arabbika Logo" class="brand-logo">
+            
             <div class="badge">Independent Developer & Founder</div>
             <h1>Building <span class="highlight">Acquisition-Ready</span> Micro-SaaS</h1>
             <p class="subtitle">I build high-retention, AI-powered web apps designed for quick acquisition. Portfolio of proprietary tech available for handover.</p>
@@ -182,8 +198,8 @@
                 <!-- PROJECT 2: INVOICE-FROM-CHAT -->
                 <div class="project-card">
                     <div class="status ready">Acquisition Ready</div>
-                    <h3>Invoice-from-Chat & Quick-Pay</h3>
-                    <p>B2B micro-SaaS that parses messy WhatsApp/Email threads and instantly generates Paystack-ready professional invoices with VAT and bank details using xAI (Grok)</p>
+                    <h3>Invoice-from-Chat</h3>
+                    <p>B2B micro-SaaS that parses messy WhatsApp/Email threads and instantly generates Paystack-ready professional invoices with VAT and bank details using xAI (Grok).</p>
                     <div class="tech-stack">
                         <span class="tech-tag">Node.js / Express</span>
                         <span class="tech-tag">xAI (Grok)</span>
