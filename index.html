@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arabbika | The Operating System for the Gig Economy</title>
+    <title>Arabbika | AI Micro-SaaS Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -20,301 +20,161 @@
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--bg);
-            background-image: radial-gradient(circle at 50% 0%, rgba(0, 229, 255, 0.1) 0%, transparent 40%);
             color: var(--text);
             line-height: 1.6;
-            min-height: 100vh;
         }
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
         
-        /* Hero Section */
-        header {
-            padding: 100px 0 60px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .brand-logo {
-            max-width: 280px;
-            width: 100%;
-            height: auto;
-            margin-bottom: 30px;
-            border-radius: 12px;
-        }
-        .badge {
-            background: rgba(0, 229, 255, 0.1);
-            color: var(--accent);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            display: inline-block;
-            margin-bottom: 24px;
-            border: 1px solid rgba(0, 229, 255, 0.2);
-        }
-        h1 {
-            font-size: clamp(36px, 6vw, 64px);
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 24px;
-            letter-spacing: -1.5px;
-        }
-        .highlight { color: var(--accent); }
-        .subtitle {
-            font-size: 20px;
-            color: var(--muted);
-            max-width: 700px;
-            margin: 0 auto 40px;
-        }
+        /* Header */
+        header { padding: 80px 0 40px; text-align: center; }
+        .brand-logo { max-width: 200px; margin-bottom: 24px; }
+        h1 { font-size: clamp(32px, 5vw, 48px); font-weight: 800; margin-bottom: 16px; letter-spacing: -1px; }
+        .subtitle { font-size: 18px; color: var(--muted); max-width: 600px; margin: 0 auto 32px; }
 
-        /* Market Data Bar */
-        .metrics-bar {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin: 40px 0 60px;
-            padding: 24px;
-            background: var(--surface);
-            border-radius: 16px;
-            border: 1px solid var(--border);
-            flex-wrap: wrap;
+        /* Facts Bar */
+        .facts-bar {
+            display: flex; justify-content: center; gap: 40px; margin: 40px 0 60px;
+            padding: 24px; background: var(--surface); border-radius: 16px;
+            border: 1px solid var(--border); flex-wrap: wrap;
         }
-        .metric { text-align: center; }
-        .metric-value { font-size: 28px; font-weight: 800; color: var(--accent); }
-        .metric-label { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+        .fact { text-align: center; }
+        .fact-value { font-size: 24px; font-weight: 800; color: var(--accent); }
+        .fact-label { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
 
-        /* Projects Section */
-        .section-title {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 30px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid var(--border);
+        /* Honest Pitch Box */
+        .pitch-box {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; margin-bottom: 60px;
         }
-        .project-grid {
-            display: grid;
-            gap: 24px;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            padding-bottom: 80px;
-        }
-        .project-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 30px;
-            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(0, 229, 255, 0.4);
-            box-shadow: 0 10px 30px rgba(0, 229, 255, 0.1);
-        }
-        .status {
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .status.live { color: #4ade80; }
-        .status::before {
-            content: '';
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: currentColor;
-            box-shadow: 0 0 10px currentColor;
-        }
-        .project-card h3 {
-            font-size: 22px;
-            margin-bottom: 12px;
-            font-weight: 700;
-        }
-        .project-card p {
-            color: var(--muted);
-            font-size: 15px;
-            margin-bottom: 24px;
-            flex-grow: 1;
-        }
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 24px;
-        }
-        .tech-tag {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 12px;
-            color: var(--muted);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        .btn {
-            display: inline-block;
-            background: var(--accent);
-            color: #000;
-            text-decoration: none;
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-weight: 600;
-            text-align: center;
-            transition: all 0.2s ease;
-        }
-        .btn:hover { 
-            opacity: 0.9; 
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(0, 229, 255, 0.3);
-        }
-
-        /* The Master CTA Footer */
-        .master-cta {
-            background: linear-gradient(135deg, rgba(0, 229, 255, 0.1), rgba(99, 91, 255, 0.1));
-            border: 1px solid rgba(0, 229, 255, 0.3);
-            border-radius: 24px;
-            padding: 60px 40px;
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        .master-cta h2 { font-size: 32px; margin-bottom: 16px; font-weight: 800; }
-        .master-cta p { color: var(--muted); font-size: 18px; max-width: 600px; margin: 0 auto 32px; }
+        .pitch-box h2 { font-size: 20px; margin-bottom: 16px; color: white; }
+        .pitch-box p { color: var(--muted); font-size: 16px; margin-bottom: 16px; }
+        .pitch-box ul { list-style: none; margin-bottom: 24px; }
+        .pitch-box li { color: var(--muted); margin-bottom: 8px; padding-left: 24px; position: relative; }
+        .pitch-box li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
         
-        .cta-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-        .btn-outline {
-            display: inline-block;
-            background: transparent;
-            color: var(--text);
-            border: 1px solid var(--border);
-            text-decoration: none;
-            padding: 14px 28px;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.2s ease;
+        .cta-grid { display: flex; gap: 16px; flex-wrap: wrap; }
+        .btn-primary { background: var(--accent); color: #000; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; border: none; cursor: pointer; font-size: 16px; }
+        .btn-primary:hover { opacity: 0.9; }
+
+        /* App List */
+        .app-list { display: flex; flex-direction: column; gap: 24px; padding-bottom: 80px; }
+        .app-row {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px; display: flex; justify-content: space-between; align-items: center;
         }
-        .btn-outline:hover { background: rgba(255, 255, 255, 0.05); border-color: var(--text); }
-        
+        .app-info h3 { font-size: 20px; margin-bottom: 4px; }
+        .app-info p { font-size: 14px; color: var(--muted); max-width: 500px; }
+        .app-meta { text-align: right; min-width: 150px; }
+        .app-status { font-size: 12px; font-weight: 600; color: #facc15; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 8px; }
+        .app-link { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 14px; }
+
         /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px 0;
-            border-top: 1px solid var(--border);
-            color: var(--muted);
-            font-size: 14px;
-        }
+        footer { text-align: center; padding: 40px 0; border-top: 1px solid var(--border); color: var(--muted); font-size: 14px; }
         footer a { color: var(--accent); text-decoration: none; }
+
+        @media (max-width: 600px) {
+            .app-row { flex-direction: column; align-items: flex-start; gap: 16px; }
+            .app-meta { text-align: left; }
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
         <header>
-            <img src="logo2.png" alt="Arabbika Logo" class="brand-logo">
-            
-            <div class="badge">Infrastructure for the Gig Economy</div>
-            <h1>The Operating System for <span class="highlight">Modern Hustlers</span></h1>
-            <p class="subtitle">Arabbika builds high-retention, AI-powered micro-SaaS tools that help freelancers, micro-merchants, and independent professionals survive and scale.</p>
+            <!-- Ensure your file is actually named logo.png -->
+            <img src="logo.png" alt="Arabbika Logo" class="brand-logo">
+            <h1>AI Micro-SaaS Portfolio</h1>
+            <p class="subtitle">Four working AI applications, built and run by one developer. All are live and pre-revenue.</p>
         </header>
 
-        <!-- Market Validation -->
-        <div class="metrics-bar">
-            <div class="metric">
-                <div class="metric-value">$2.5T</div>
-                <div class="metric-label">Global Gig Economy</div>
+        <!-- The Facts Bar (No fluff) -->
+        <div class="facts-bar">
+            <div class="fact">
+                <div class="fact-value">4</div>
+                <div class="fact-label">Working Apps</div>
             </div>
-            <div class="metric">
-                <div class="metric-value">4</div>
-                <div class="metric-label">Live Vertical Apps</div>
+            <div class="fact">
+                <div class="fact-value">Low</div>
+                <div class="fact-label">Running Cost Today</div>
             </div>
-            <div class="metric">
-                <div class="metric-value">Zero</div>
-                <div class="metric-label">Infra Overhead</div>
+            <div class="fact">
+                <div class="fact-value">Solo</div>
+                <div class="fact-label">Built & Maintained By</div>
             </div>
         </div>
 
-        <main>
-            <h2 class="section-title">The Arabbika Suite</h2>
+        <!-- The Honest Pitch -->
+        <div class="pitch-box">
+            <h2>About the Portfolio</h2>
+            <p>These apps are live and pre-revenue, with no paying customers yet. Hosting costs are low today; the main variable cost is AI API usage (xAI), which scales with use. Paystack also charges a fee per transaction.</p>
+            <p><strong>What a sale includes:</strong></p>
+            <ul>
+                <li>Full source code and GitHub repositories</li>
+                <li>Hosting migration guidance (Render / Cloudflare)</li>
+                <li>API key rotation (xAI, Paystack)</li>
+                <li>A handover period to ensure smooth transition</li>
+            </ul>
+            <p>I am open to selling individual apps or discussing distribution partnerships.</p>
             
-            <div class="project-grid">
-                
-                <!-- APP 1: TRADER -->
-                <div class="project-card">
-                    <div class="status live">Live & Scaling</div>
-                    <h3>Arabbika Trader</h3>
-                    <p>For the product-based hustler. An AI pricing engine, inventory tracker, and debt ledger for informal traders and micro-merchants in emerging markets.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Informal Economy</span>
-                        <span class="tech-tag">xAI</span>
-                        <span class="tech-tag">Mobile-First</span>
-                    </div>
-                    <a href="https://arabbika-trader.onrender.com" target="_blank" class="btn">View Live App →</a>
-                </div>
-
-                <!-- APP 2: INVOICE -->
-                <div class="project-card">
-                    <div class="status live">Live & Scaling</div>
-                    <h3>Invoice-from-Chat</h3>
-                    <p>For the service-based hustler. Paste a WhatsApp thread and instantly generate a Paystack-ready invoice. Includes "Quick-Pay" to charge for scope creep.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Freelancers</span>
-                        <span class="tech-tag">Paystack API</span>
-                        <span class="tech-tag">B2B SaaS</span>
-                    </div>
-                    <a href="https://invoice-from-chat.onrender.com" target="_blank" class="btn">View Live App →</a>
-                </div>
-
-                <!-- APP 3: HAIR PREVIEW -->
-                <div class="project-card">
-                    <div class="status live">Live & Scaling</div>
-                    <h3>AI Hair Preview Board</h3>
-                    <p>For the beauty economy. A consultation tool for stylists. Clients upload a photo, choose a style, and AI generates a realistic try-on with a stylist brief.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Beauty & Salons</span>
-                        <span class="tech-tag">Cloudflare Edge</span>
-                        <span class="tech-tag">Image AI</span>
-                    </div>
-                    <a href="https://arabbika.github.io/arabbika-hair-preview/" target="_blank" class="btn">View Live App →</a>
-                </div>
-
-                <!-- APP 4: VITVERSE -->
-                <div class="project-card">
-                    <div class="status live">Live & Scaling</div>
-                    <h3>Vitverse</h3>
-                    <p>For the burned-out professional. A gamified, AI-powered wellness sanctuary with a Tamagotchi-style companion that reacts to your self-care habits.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Consumer AI</span>
-                        <span class="tech-tag">PWA</span>
-                        <span class="tech-tag">Wellness</span>
-                    </div>
-                    <a href="https://vitverse.ashanar-elance.workers.dev/" target="_blank" class="btn">View Live App →</a>
-                </div>
-
-            </div>
-        </main>
-
-        <!-- The Master CTA -->
-        <div class="master-cta">
-            <h2>Build with Arabbika</h2>
-            <p>Whether you are looking to acquire a high-retention SaaS asset, invest in the future of the gig economy, or explore a strategic partnership, let's talk.</p>
+            <!-- Single CTA -->
             <div class="cta-grid">
-                <a href="mailto:arabbika.co@gmail.com?subject=Partnership%20Inquiry" class="btn">Discuss a Partnership</a>
-                <a href="mailto:arabbika.co@gmail.com?subject=Acquisition%20Inquiry" class="btn-outline">Acquisition Opportunities</a>
-                <a href="mailto:arabbika.co@gmail.com?subject=Investment%20Inquiry" class="btn-outline">Investor Relations</a>
+                <a href="mailto:arabbika.co@gmail.com?subject=Inquiry%20about%20Arabbika%20Apps" class="btn-primary">Enquire about an app</a>
             </div>
+        </div>
+
+        <!-- The Apps -->
+        <h2 style="margin-bottom: 24px; font-size: 24px;">The Software Assets</h2>
+        <div class="app-list">
+            
+            <div class="app-row">
+                <div class="app-info">
+                    <h3>Invoice-from-Chat</h3>
+                    <p>For freelancers. Parses WhatsApp threads into Paystack-ready invoices. Includes "Quick-Pay" for scope creep.</p>
+                </div>
+                <div class="app-meta">
+                    <span class="app-status">Live / Pre-revenue</span>
+                    <a href="https://invoice-from-chat.onrender.com" target="_blank" class="app-link">View App →</a>
+                </div>
+            </div>
+
+            <div class="app-row">
+                <div class="app-info">
+                    <h3>Arabbika Trader</h3>
+                    <p>For informal traders. An AI pricing engine, inventory tracker, and debt ledger for emerging markets.</p>
+                </div>
+                <div class="app-meta">
+                    <span class="app-status">Live / Pre-revenue</span>
+                    <a href="https://arabbika-trader.onrender.com" target="_blank" class="app-link">View App →</a>
+                </div>
+            </div>
+
+            <div class="app-row">
+                <div class="app-info">
+                    <h3>AI Hair Preview Board</h3>
+                    <p>For salons. Generates realistic hair try-ons using xAI and writes a custom stylist brief for the client.</p>
+                </div>
+                <div class="app-meta">
+                    <span class="app-status">Live / Pre-revenue</span>
+                    <a href="https://arabbika.github.io/arabbika-hair-preview/" target="_blank" class="app-link">View App →</a>
+                </div>
+            </div>
+
+            <div class="app-row">
+                <div class="app-info">
+                    <h3>Vitverse</h3>
+                    <p>For professionals. A gamified, AI wellness companion that encourages self-care through habit loops.</p>
+                </div>
+                <div class="app-meta">
+                    <span class="app-status">Live / Pre-revenue</span>
+                    <a href="https://vitverse.ashanar-elance.workers.dev/" target="_blank" class="app-link">View App →</a>
+                </div>
+            </div>
+
         </div>
 
         <footer>
-            <p>© 2026 Arabbika Software. Built from South Africa for the global hustle. 🇿🇦 <br> 
+            <p>© 2026 Arabbika. Built from South Africa. 🇿🇦 <br> 
             Contact: <a href="mailto:arabbika.co@gmail.com">arabbika.co@gmail.com</a></p>
         </footer>
     </div>
