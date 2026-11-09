@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arabbika | Micro-SaaS Acquisitions</title>
+    <title>Arabbika | The Operating System for the Gig Economy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -20,32 +20,32 @@
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--bg);
+            background-image: radial-gradient(circle at 50% 0%, rgba(0, 229, 255, 0.1) 0%, transparent 40%);
             color: var(--text);
             line-height: 1.6;
+            min-height: 100vh;
         }
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 24px;
         }
+        
         /* Hero Section */
         header {
-            padding: 80px 0 60px;
+            padding: 100px 0 60px;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        
-        /* The Logo */
         .brand-logo {
-            max-width: 320px;
+            max-width: 280px;
             width: 100%;
             height: auto;
             margin-bottom: 30px;
             border-radius: 12px;
         }
-
         .badge {
             background: rgba(0, 229, 255, 0.1);
             color: var(--accent);
@@ -59,19 +59,36 @@
             border: 1px solid rgba(0, 229, 255, 0.2);
         }
         h1 {
-            font-size: clamp(36px, 6vw, 56px);
+            font-size: clamp(36px, 6vw, 64px);
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 24px;
-            letter-spacing: -1px;
+            letter-spacing: -1.5px;
         }
         .highlight { color: var(--accent); }
         .subtitle {
             font-size: 20px;
             color: var(--muted);
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto 40px;
         }
+
+        /* Market Data Bar */
+        .metrics-bar {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 40px 0 60px;
+            padding: 24px;
+            background: var(--surface);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            flex-wrap: wrap;
+        }
+        .metric { text-align: center; }
+        .metric-value { font-size: 28px; font-weight: 800; color: var(--accent); }
+        .metric-label { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
         /* Projects Section */
         .section-title {
             font-size: 24px;
@@ -83,7 +100,7 @@
         .project-grid {
             display: grid;
             gap: 24px;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             padding-bottom: 80px;
         }
         .project-card {
@@ -91,13 +108,14 @@
             border: 1px solid var(--border);
             border-radius: 16px;
             padding: 30px;
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
         }
         .project-card:hover {
             transform: translateY(-5px);
             border-color: rgba(0, 229, 255, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 229, 255, 0.1);
         }
         .status {
             font-size: 12px;
@@ -109,18 +127,19 @@
             align-items: center;
             gap: 6px;
         }
-        .status.ready { color: #4ade80; }
-        .status.dev { color: #facc15; }
+        .status.live { color: #4ade80; }
         .status::before {
             content: '';
             width: 8px;
             height: 8px;
             border-radius: 50%;
             background: currentColor;
+            box-shadow: 0 0 10px currentColor;
         }
         .project-card h3 {
-            font-size: 24px;
+            font-size: 22px;
             margin-bottom: 12px;
+            font-weight: 700;
         }
         .project-card p {
             color: var(--muted);
@@ -140,6 +159,7 @@
             border-radius: 6px;
             font-size: 12px;
             color: var(--muted);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
         .btn {
             display: inline-block;
@@ -150,9 +170,40 @@
             border-radius: 8px;
             font-weight: 600;
             text-align: center;
-            transition: opacity 0.2s ease;
+            transition: all 0.2s ease;
         }
-        .btn:hover { opacity: 0.8; }
+        .btn:hover { 
+            opacity: 0.9; 
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 229, 255, 0.3);
+        }
+
+        /* The Master CTA Footer */
+        .master-cta {
+            background: linear-gradient(135deg, rgba(0, 229, 255, 0.1), rgba(99, 91, 255, 0.1));
+            border: 1px solid rgba(0, 229, 255, 0.3);
+            border-radius: 24px;
+            padding: 60px 40px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .master-cta h2 { font-size: 32px; margin-bottom: 16px; font-weight: 800; }
+        .master-cta p { color: var(--muted); font-size: 18px; max-width: 600px; margin: 0 auto 32px; }
+        
+        .cta-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .btn-outline {
+            display: inline-block;
+            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--border);
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        .btn-outline:hover { background: rgba(255, 255, 255, 0.05); border-color: var(--text); }
+        
         /* Footer */
         footer {
             text-align: center;
@@ -168,78 +219,102 @@
 
     <div class="container">
         <header>
-            <!-- The Logo Image -->
-            <img src="logo.png" alt="Arabbika Logo" class="brand-logo">
-
+            <img src="logo2.png" alt="Arabbika Logo" class="brand-logo">
             
-            <div class="badge">Independent Developer & Founder</div>
-            <h1>Building <span class="highlight">Acquisition-Ready</span> Micro-SaaS</h1>
-            <p class="subtitle">I build high-retention, AI-powered web apps designed for quick acquisition. Portfolio of proprietary tech available for handover.</p>
+            <div class="badge">Infrastructure for the Gig Economy</div>
+            <h1>The Operating System for <span class="highlight">Modern Hustlers</span></h1>
+            <p class="subtitle">Arabbika builds high-retention, AI-powered micro-SaaS tools that help freelancers, micro-merchants, and independent professionals survive and scale.</p>
         </header>
 
+        <!-- Market Validation -->
+        <div class="metrics-bar">
+            <div class="metric">
+                <div class="metric-value">$2.5T</div>
+                <div class="metric-label">Global Gig Economy</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value">4</div>
+                <div class="metric-label">Live Vertical Apps</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value">Zero</div>
+                <div class="metric-label">Infra Overhead</div>
+            </div>
+        </div>
+
         <main>
-            <h2 class="section-title">Live Applications</h2>
+            <h2 class="section-title">The Arabbika Suite</h2>
             
             <div class="project-grid">
                 
-                <!-- PROJECT 1: VITVERSE -->
+                <!-- APP 1: TRADER -->
                 <div class="project-card">
-                    <div class="status ready">Acquisition Ready</div>
-                    <h3>Vitverse</h3>
-                    <p>A gamified, AI-powered wellness sanctuary. Intercepts doomscrolling and gamifies self-care through a Tamagotchi-style emotional companion, Web Audio Zen Sandbox, and Grok AI integration.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Vanilla JS PWA</span>
-                        <span class="tech-tag">Vercel Backend</span>
-                        <span class="tech-tag">Supabase</span>
-                        <span class="tech-tag">Cloudflare Edge</span>
-                    </div>
-                    <a href="https://vitverse.ashanar-elance.workers.dev/" target="_blank" class="btn">View Live App →</a>
-                </div>
-
-                <!-- PROJECT 2: INVOICE-FROM-CHAT -->
-                <div class="project-card">
-                    <div class="status ready">Acquisition Ready</div>
-                    <h3>Invoice-from-Chat</h3>
-                    <p>B2B micro-SaaS that parses messy WhatsApp/Email threads and instantly generates Paystack-ready professional invoices with VAT and bank details using xAI (Grok).</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Node.js / Express</span>
-                        <span class="tech-tag">xAI (Grok)</span>
-                        <span class="tech-tag">Paystack</span>
-                        <span class="tech-tag">Render</span>
-                    </div>
-                    <a href="https://invoice-from-chat.onrender.com" target="_blank" class="btn">View Live App →</a>
-                </div>
-
-                <!-- PROJECT 3: ARABBIKA TRADER -->
-                <div class="project-card">
-                    <div class="status ready">Acquisition Ready</div>
+                    <div class="status live">Live & Scaling</div>
                     <h3>Arabbika Trader</h3>
-                    <p>An AI-powered pricing engine and WhatsApp flyer generator for informal traders in emerging markets. Automatically factors in transport, data, and shrinkage to prevent selling at a loss.</p>
+                    <p>For the product-based hustler. An AI pricing engine, inventory tracker, and debt ledger for informal traders and micro-merchants in emerging markets.</p>
                     <div class="tech-stack">
-                        <span class="tech-tag">Node.js / Express</span>
-                        <span class="tech-tag">xAI (Grok)</span>
-                        <span class="tech-tag">Mobile-First UI</span>
-                        <span class="tech-tag">Render</span>
+                        <span class="tech-tag">Informal Economy</span>
+                        <span class="tech-tag">xAI</span>
+                        <span class="tech-tag">Mobile-First</span>
                     </div>
                     <a href="https://arabbika-trader.onrender.com" target="_blank" class="btn">View Live App →</a>
                 </div>
 
-                <!-- PROJECT 4: PLACEHOLDER -->
+                <!-- APP 2: INVOICE -->
                 <div class="project-card">
-                    <div class="status dev">In Development</div>
-                    <h3>Next Micro-SaaS</h3>
-                    <p>Next acquisition-ready app. The Arabbika Engine is ready to spin up new tools.</p>
+                    <div class="status live">Live & Scaling</div>
+                    <h3>Invoice-from-Chat</h3>
+                    <p>For the service-based hustler. Paste a WhatsApp thread and instantly generate a Paystack-ready invoice. Includes "Quick-Pay" to charge for scope creep.</p>
                     <div class="tech-stack">
-                        <span class="tech-tag">Coming Soon</span>
+                        <span class="tech-tag">Freelancers</span>
+                        <span class="tech-tag">Paystack API</span>
+                        <span class="tech-tag">B2B SaaS</span>
                     </div>
-                    <a href="#" class="btn" style="background: var(--surface); color: var(--text); border: 1px solid var(--border); cursor: not-allowed;">Coming Soon</a>
+                    <a href="https://invoice-from-chat.onrender.com" target="_blank" class="btn">View Live App →</a>
+                </div>
+
+                <!-- APP 3: HAIR PREVIEW -->
+                <div class="project-card">
+                    <div class="status live">Live & Scaling</div>
+                    <h3>AI Hair Preview Board</h3>
+                    <p>For the beauty economy. A consultation tool for stylists. Clients upload a photo, choose a style, and AI generates a realistic try-on with a stylist brief.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Beauty & Salons</span>
+                        <span class="tech-tag">Cloudflare Edge</span>
+                        <span class="tech-tag">Image AI</span>
+                    </div>
+                    <a href="https://arabbika.github.io/arabbika-hair-preview/" target="_blank" class="btn">View Live App →</a>
+                </div>
+
+                <!-- APP 4: VITVERSE -->
+                <div class="project-card">
+                    <div class="status live">Live & Scaling</div>
+                    <h3>Vitverse</h3>
+                    <p>For the burned-out professional. A gamified, AI-powered wellness sanctuary with a Tamagotchi-style companion that reacts to your self-care habits.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Consumer AI</span>
+                        <span class="tech-tag">PWA</span>
+                        <span class="tech-tag">Wellness</span>
+                    </div>
+                    <a href="https://vitverse.ashanar-elance.workers.dev/" target="_blank" class="btn">View Live App →</a>
                 </div>
 
             </div>
         </main>
 
+        <!-- The Master CTA -->
+        <div class="master-cta">
+            <h2>Build with Arabbika</h2>
+            <p>Whether you are looking to acquire a high-retention SaaS asset, invest in the future of the gig economy, or explore a strategic partnership, let's talk.</p>
+            <div class="cta-grid">
+                <a href="mailto:arabbika.co@gmail.com?subject=Partnership%20Inquiry" class="btn">Discuss a Partnership</a>
+                <a href="mailto:arabbika.co@gmail.com?subject=Acquisition%20Inquiry" class="btn-outline">Acquisition Opportunities</a>
+                <a href="mailto:arabbika.co@gmail.com?subject=Investment%20Inquiry" class="btn-outline">Investor Relations</a>
+            </div>
+        </div>
+
         <footer>
-            <p>Interested in acquiring any of these apps or arabbika.co? <br> 
+            <p>© 2026 Arabbika Software. Built from South Africa for the global hustle. 🇿🇦 <br> 
             Contact: <a href="mailto:arabbika.co@gmail.com">arabbika.co@gmail.com</a></p>
         </footer>
     </div>
